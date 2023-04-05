@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="JavaWebBasicF5.src.main.java.mapper.SinhVienMapper">
+
+	<resultMap id="SinhVienMAP" type="model.SinhVien">
+
+		<result column="MAKH" property="maSv" />
+		<result column="TENKH" property="ten" />
+		<result column="DIACHI" property="diaChi" />
+		<result column="MAIL" property="mail" />
+		<result column="PHONE" property="phone" />
+		<result column="IMAGE" property="image" />
+		<result column="BIRTHDAY" property="birthDay" />
+		<result column="ISUSE" property="isUse" />
+		<result column="ROLEID" property="roleId" />
+		
+	</resultMap>
+
+	<select id="getAll" resultMap="SinhVienMAP">
+		SELECT MAKH
+				, TENKH
+				, DIACHI
+				, MAIL
+				, PHONE
+				, IMAGE
+				, BIRTHDAY
+				, ISUSE
+				, ROLEID
+		FROM SYSTEM.F5_INV_HR_USER
+	</select>
+
+</mapper>
